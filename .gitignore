@@ -1,0 +1,13 @@
+*~
+.venv/*
+*.ipynb_checkpoints*
+*__pycache__*
+bin/
+lib/
+lib64
+pyvenv.cfg
+share/
+*.orig
+*.rej
+*.patch
+*.coverage
