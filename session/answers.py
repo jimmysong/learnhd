@@ -1,6 +1,6 @@
 '''
 #markdown
-# Session Objectives
+# Session 3 Objectives
 * Learn HD Wallets (BIP32)
 * Learn HD Wallet Organization (BIP44)
 * Learn Mnemonic Backup (BIP39)
@@ -221,7 +221,7 @@ hd:HDTest:test_traverse:
 * Result is base58-encoded
 #endmarkdown
 #markdown
-![](/files/session3/xpub.png)
+![](/files/session/xpub.png)
 #endmarkdown
 #code
 >>> # Example to create an xpub
@@ -313,9 +313,9 @@ tpubD6NzVbkrYhZ4WcNYqjJknFvnt6tbaTB2sjxRKWEHUbom2NGZ7gk9rp7UGUCmVszQ3RniA1VS1cML
 #markdown
 # Examples
 * m/44'/0'/0'/0/0 - p2pkh, Mainnet Bitcoin first account, external first address
-* m/44'/1'/2'/1/3 - p2pkh, Testnet Bitcoin, second account, internal, 4th address
+* m/44'/1'/2'/1/3 - p2pkh, Testnet Bitcoin, third account, internal, 4th address
 * m/49'/0'/1'/1/0 - p2sh-p2wpkh, Mainnet Bitcoin, second account, internal, first address
-* m/84'/1'/0'/0/2 - p2wpkh, Testnet Bitcoin, first count, external, third address
+* m/84'/1'/0'/0/2 - p2wpkh, Testnet Bitcoin, first account, external, third address
 #endmarkdown
 #code
 >>> # Example of getting p2pkh/p2sh-p2wpkh/p2wpkh testnet addresses
