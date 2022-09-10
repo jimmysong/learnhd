@@ -4,7 +4,7 @@ Install python 3.8 or above on your machine:
 
  * Windows: https://www.python.org/downloads/release/python-395/
  * Mac OS X: https://www.python.org/downloads/release/python-395/
- * Linux: see your distro docs (on Debian/Ubuntu `sudo apt get install python3` should work)
+ * Linux: see your distro docs (on Debian/Ubuntu `sudo apt-get install python3` should work)
 
 Install pip:
 
