@@ -1,6 +1,6 @@
 '''
 #markdown
-# Session 3 Objectives
+# Session Objectives
 * Learn HD Wallets (BIP32)
 * Learn HD Wallet Organization (BIP44)
 * Learn Mnemonic Backup (BIP39)
@@ -221,7 +221,7 @@ hd:HDTest:test_traverse:
 * Result is base58-encoded
 #endmarkdown
 #markdown
-![](/files/session/xpub.png)
+![](https://programmingbitcoin.com/certificates/xpub.png)
 #endmarkdown
 #code
 >>> # Example to create an xpub
