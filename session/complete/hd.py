@@ -99,6 +99,7 @@ class HDPrivateKey:
             # the message data is the private key secret in 33 bytes in
             #  big-endian and the index in 4 bytes big-endian.
             data = int_to_big_endian(self.private_key.secret, 33) + int_to_big_endian(index, 4)
+        # else
         else:
             # the message data is the public key compressed SEC
             #  and the index in 4 bytes big-endian.
@@ -138,8 +139,8 @@ class HDPrivateKey:
         components = path.split('/')[1:]
         # iterate through the path components
         for child in components:
-            # if the child ends with a ', we have a hardened child
-            if child.endswith("'"):
+            # if the child ends with a ' or h, we have a hardened child
+            if child.endswith("'") or child.endswith("h"):
                 # index is the integer representation + 0x80000000
                 index = int(child[:-1]) + 0x80000000
             # else the index is the integer representation
@@ -427,8 +428,8 @@ class HDPublicKey:
         components = path.split('/')[1:]
         # iterate through the components
         for child in components:
-            # raise a ValueError if the path ends with a '
-            if child[-1:] == "'":
+            # raise a ValueError if the path ends with a ' or h
+            if child.endswith("'") or child.endswith("h"):
                 raise ValueError('HDPublicKey cannot get hardened child')
             # traverse the next child at the index
             current = current.child(int(child))
@@ -562,7 +563,7 @@ class HDTest(TestCase):
         pub = priv.pub
         path = "m/1/2/3/4"
         self.assertEqual(priv.traverse(path).bech32_address(), pub.traverse(path).bech32_address())
-        path = "m/0/1'/2/3'"
+        path = "m/0/1'/2/3h"
         self.assertEqual(priv.traverse(path).bech32_address(), 'tb1q423gz8cenqt6vfw987vlyxql0rh2jgh4sy0tue')
 
     def test_prv_pub(self):

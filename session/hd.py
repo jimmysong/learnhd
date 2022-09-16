@@ -90,6 +90,7 @@ class HDPrivateKey:
         # if index >= 0x80000000
             # the message data is the private key secret in 33 bytes in
             #  big-endian and the index in 4 bytes big-endian.
+        # else
             # the message data is the public key compressed SEC
             #  and the index in 4 bytes big-endian.
         # get the hmac_sha512 with chain code and data
@@ -110,7 +111,7 @@ class HDPrivateKey:
         # keep track of the current node starting with self
         # split up the path by the '/' splitter, ignore the first
         # iterate through the path components
-            # if the child ends with a ', we have a hardened child
+            # if the child ends with a ' or h, we have a hardened child
                 # index is the integer representation + 0x80000000
             # else the index is the integer representation
             # grab the child at the index calculated
@@ -306,18 +307,12 @@ class HDPublicKey:
         '''Returns the HDPublicKey at the path indicated.
         Path should be in the form of m/x/y/z.'''
         # start current node at self
-        current = self
         # get components of the path split at '/', ignoring the first
-        components = path.split('/')[1:]
         # iterate through the components
-        for child in components:
-            # raise a ValueError if the path ends with a '
-            if child[-1:] == "'":
-                raise ValueError('HDPublicKey cannot get hardened child')
+            # raise a ValueError if the path ends with a ' or h
             # traverse the next child at the index
-            current = current.child(int(child))
         # return the current node
-        return current
+        raise NotImplementedError
 
     def raw_serialize(self):
         if self._raw is None:
@@ -416,7 +411,7 @@ class HDTest(TestCase):
         pub = priv.pub
         path = "m/1/2/3/4"
         self.assertEqual(priv.traverse(path).bech32_address(), pub.traverse(path).bech32_address())
-        path = "m/0/1'/2/3'"
+        path = "m/0/1'/2/3h"
         self.assertEqual(priv.traverse(path).bech32_address(), 'tb1q423gz8cenqt6vfw987vlyxql0rh2jgh4sy0tue')
 
     def test_prv_pub(self):

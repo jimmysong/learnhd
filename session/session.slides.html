@@ -15055,7 +15055,7 @@ div.jp-OutputPrompt {
 <h1 id="Path-Notation">Path Notation<a class="anchor-link" href="#Path-Notation">&#182;</a></h1><ul>
 <li>m/x/y/z</li>
 <li>m/1/2'/0 means the root key's 1st unhardened child's 2nd hardened child's 0th unhardened child</li>
-<li>/ delimits each level and ' indicates hardened</li>
+<li>/ delimits each level and ' or h indicates hardened</li>
 </ul>
 
 </div>
@@ -15077,7 +15077,7 @@ div.jp-OutputPrompt {
 <span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;m/0/1&#39;/2/3&#39;&quot;</span>
 <span class="n">components</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:]</span>
 <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">components</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">child</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">child</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">child</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;h&quot;</span><span class="p">):</span>
         <span class="n">index</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">child</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="mh">0x80000000</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">index</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>

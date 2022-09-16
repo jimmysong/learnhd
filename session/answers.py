@@ -178,7 +178,7 @@ hd:HDTest:test_child:
 # Path Notation
 * m/x/y/z
 * m/1/2'/0 means the root key's 1st unhardened child's 2nd hardened child's 0th unhardened child
-* / delimits each level and ' indicates hardened
+* / delimits each level and ' or h indicates hardened
 #endmarkdown
 #code
 >>> # example of private key path traversal
@@ -189,7 +189,7 @@ hd:HDTest:test_child:
 >>> path = "m/0/1'/2/3'"
 >>> components = path.split('/')[1:]
 >>> for child in components:
-...     if child.endswith("'"):
+...     if child.endswith("'") or child.endswith("h"):
 ...         index = int(child[:-1]) + 0x80000000
 ...     else:
 ...         index = int(child)
@@ -676,7 +676,7 @@ def xprv_traverse(self, path):
     current = self
     components = path.split('/')[1:]
     for child in components:
-        if child.endswith("'"):
+        if child.endswith("'") or child.endswith("h"):
             index = int(child[:-1]) + 0x80000000
         else:
             index = int(child)
@@ -738,7 +738,7 @@ def xpub_traverse(self, path):
     current = self
     components = path.split('/')[1:]
     for child in components:
-        if child[-1:] == "'":
+        if child.endswith("'") or child.endswith("h"):
             raise ValueError('HDPublicKey cannot get hardened child')
         current = current.child(int(child))
     return current
