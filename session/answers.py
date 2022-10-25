@@ -42,18 +42,12 @@
 * No privacy from payers
 #endmarkdown
 #markdown
-# Message Authentication Codes
-* Used for verifying that a message is authentic when you share a secret already
-* HMAC is an implementation of MAC where H stands for "hash-based"
-* Most cryptographic hash functions (like sha256) have an HMAC implementation
-#endmarkdown
-#markdown
 # Heirarchical Deterministic Wallets (BIP32)
 * Single seed + chain code (shared secret)
 * The master private key can generate $2^{32}$ child private keys
 * Every child private key can also generate $2^{32}$ child private keys
 * Revealing a child public key does not reveal the parent public key
-* Adds privacy from recpients
+* Adds privacy from recipients
 #endmarkdown
 #markdown
 # Implementation
@@ -62,6 +56,12 @@
 * $2^{31}$ hardened keys and $2^{31}$ unhardened keys
 * Hardened means the public key ($P$) and chain code ($c$) *cannot* derive the child public key.
 * Unhardened means the public key ($P$) and chain code ($c$) *can* derive the child public key
+#endmarkdown
+#markdown
+# Message Authentication Codes
+* Used for verifying that a message is authentic when you share a secret already
+* HMAC is an implementation of MAC where H stands for "hash-based"
+* Most cryptographic hash functions (like sha256) have an HMAC implementation
 #endmarkdown
 #markdown
 # Defining a HD Public Key

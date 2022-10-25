@@ -14658,17 +14658,6 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="https://github.com/jimmysong/learnhd"><a href="https://github.com/jimmysong/learnhd">https://github.com/jimmysong/learnhd</a><a class="anchor-link" href="#https://github.com/jimmysong/learnhd">&#182;</a></h1>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="Session-Objectives">Session Objectives<a class="anchor-link" href="#Session-Objectives">&#182;</a></h1><ul>
 <li>Learn HD Wallets (BIP32)</li>
 <li>Learn HD Wallet Organization (BIP44)</li>
@@ -14769,28 +14758,12 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Message-Authentication-Codes">Message Authentication Codes<a class="anchor-link" href="#Message-Authentication-Codes">&#182;</a></h1><ul>
-<li>Used for verifying that a message is authentic when you share a secret already</li>
-<li>HMAC is an implementation of MAC where H stands for "hash-based"</li>
-<li>Most cryptographic hash functions (like sha256) have an HMAC implementation</li>
-</ul>
-
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="Heirarchical-Deterministic-Wallets-(BIP32)">Heirarchical Deterministic Wallets (BIP32)<a class="anchor-link" href="#Heirarchical-Deterministic-Wallets-(BIP32)">&#182;</a></h1><ul>
 <li>Single seed + chain code (shared secret)</li>
 <li>The master private key can generate $2^{32}$ child private keys</li>
 <li>Every child private key can also generate $2^{32}$ child private keys</li>
 <li>Revealing a child public key does not reveal the parent public key</li>
-<li>Adds privacy from recpients</li>
+<li>Adds privacy from recipients</li>
 </ul>
 
 </div>
@@ -14809,6 +14782,22 @@ div.jp-OutputPrompt {
 <li>$2^{31}$ hardened keys and $2^{31}$ unhardened keys</li>
 <li>Hardened means the public key ($P$) and chain code ($c$) <em>cannot</em> derive the child public key.</li>
 <li>Unhardened means the public key ($P$) and chain code ($c$) <em>can</em> derive the child public key</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Message-Authentication-Codes">Message Authentication Codes<a class="anchor-link" href="#Message-Authentication-Codes">&#182;</a></h1><ul>
+<li>Used for verifying that a message is authentic when you share a secret already</li>
+<li>HMAC is an implementation of MAC where H stands for "hash-based"</li>
+<li>Most cryptographic hash functions (like sha256) have an HMAC implementation</li>
 </ul>
 
 </div>
